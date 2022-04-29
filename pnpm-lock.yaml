@@ -93,10 +93,10 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@babel/parser/7.17.9:
+  /@babel/parser/7.17.10:
     resolution:
       {
-        integrity: sha512-vqUSBLP8dQHFPdPi9bc5GK9vRkYHJ49fsZdtoJ8EQ8ibpwk5rPKfvNIwChB0KVXcIjcepEBBd2VHC5r9Gy8ueg==,
+        integrity: sha512-n2Q6i+fnJqzOaq2VkdXxy2TCPCWQZHiCo0XqmrCvDWcZQKRyZzYi4Z0yxlBuN0w+r2ZHmre+Q087DSrw3pbJDQ==,
       }
     engines: { node: ">=6.0.0" }
     hasBin: true
@@ -974,7 +974,7 @@ packages:
         integrity: sha512-AAmr52ji3Zhk7IKIuigX2osWWsb2nQE5xsdFYjdnmtQ4gymmqXbjLvkSE174+fF3A3kstYrTgGkqgOEbsdLDpw==,
       }
     dependencies:
-      "@babel/parser": 7.17.9
+      "@babel/parser": 7.17.10
       "@vue/shared": 3.2.33
       estree-walker: 2.0.2
       source-map: 0.6.1
@@ -994,7 +994,7 @@ packages:
         integrity: sha512-H8D0WqagCr295pQjUYyO8P3IejM3vEzeCO1apzByAEaAR/WimhMYczHfZVvlCE/9yBaEu/eu9RdiWr0kF8b71Q==,
       }
     dependencies:
-      "@babel/parser": 7.17.9
+      "@babel/parser": 7.17.10
       "@vue/compiler-core": 3.2.33
       "@vue/compiler-dom": 3.2.33
       "@vue/compiler-ssr": 3.2.33
@@ -1035,7 +1035,7 @@ packages:
         integrity: sha512-4UL5KOIvSQb254aqenW4q34qMXbfZcmEsV/yVidLUgvwYQQ/D21bGX3DlgPUGI3c4C+iOnNmDCkIxkILoX/Pyw==,
       }
     dependencies:
-      "@babel/parser": 7.17.9
+      "@babel/parser": 7.17.10
       "@vue/compiler-core": 3.2.33
       "@vue/shared": 3.2.33
       estree-walker: 2.0.2
@@ -2173,7 +2173,7 @@ packages:
       cspell-glob: 5.19.7
       cspell-io: 5.19.7
       cspell-trie-lib: 5.19.7
-      fast-equals: 3.0.1
+      fast-equals: 3.0.2
       find-up: 5.0.0
       fs-extra: 10.1.0
       gensequence: 3.1.1
@@ -3095,10 +3095,10 @@ packages:
       }
     dev: true
 
-  /fast-equals/3.0.1:
+  /fast-equals/3.0.2:
     resolution:
       {
-        integrity: sha512-J9FxqqC9E/ja0C+SYhoG3Jl6pQuhP92HNcVC75xDEhB+GUzPnjEp3vMfPIxPprYZFfXS5hpVvvPCWUMiDSMS8Q==,
+        integrity: sha512-iY0fAmW7fzxHp22VCRLpOgWbsWsF+DJWi1jhc8w+VGlJUiS+KcGZV2A8t+Q9oTQwhG3L1W8Lu/oe3ZyOPdhZjw==,
       }
     dev: true
 

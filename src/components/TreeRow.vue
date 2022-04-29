@@ -9,14 +9,18 @@ export default {
   data() {
     return {
       isActive: false,
+      tristate: false,
     };
   },
   computed: {
     isParent() {
       return this.treedata.children && this.treedata.children.length;
     },
-    isRoot() {
-      return !this.depth;
+    isRoot(node) {
+      if (!node.depth) {
+        return "undetermined";
+      }
+      return node.depth;
     },
   },
   methods: {
@@ -26,9 +30,20 @@ export default {
       }
     },
   },
-  // watch: {
-  //   isChecked() {},
-  // },
+  watch: {
+    isChecked() {
+      console.log(this.$parent.isChecked, this.$parent.depth, this.depth);
+
+      if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
+        this.$parent.tristate = true;
+      }
+    },
+    tristate() {
+      if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
+        this.$parent.tristate = true;
+      }
+    },
+  },
 };
 </script>
 
@@ -41,7 +56,7 @@ export default {
       {{ treedata.name }}
 
       <input
-        :class="{ undetermined: isRoot }"
+        :class="{ undetermined: tristate }"
         v-model="isChecked"
         ref="input"
         @click.stop
