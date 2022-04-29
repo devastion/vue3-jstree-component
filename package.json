@@ -1,6 +1,6 @@
 {
   "name": "vue3-jstree-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "ntl -e start --no-rerun-cache -o -A ",
     "main:development": "concurrently -p \"[{name}]\" -n \"VITE,VITEST\" -c \"bgBlue.bold,bgMagenta.bold\" \"pnpm run main:server\" \"pnpm exec vitest -w\"",
