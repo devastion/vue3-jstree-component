@@ -26,12 +26,14 @@ export default {
 
 <template>
   <li>
-    <div
+    <span
       @click="toggle"
-      :class="[isActive ? 'open' : 'closed', isParent ? 'root' : 'file']">
+      :class="[isActive ? 'open' : 'closed', isParent ? 'root ' : 'file']">
+      <span :class="[isParent ? 'root root__icon' : '']" />
       {{ treedata.name }}
-    </div>
-    <ul v-show="isActive" v-if="isParent">
+      <input @click.stop type="checkbox" />
+    </span>
+    <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
       <TreeRow
         v-for="treedata in treedata.children"
         :treedata="treedata"
@@ -42,60 +44,37 @@ export default {
 
 <style lang="scss" scoped>
 .root {
-  background-image: url("@icons/dots.png");
-  background-repeat: repeat-y;
-  display: inline-block;
-  cursor: pointer;
-
   &__icon {
     content: url("@icons/root.png");
+    vertical-align: -0.5rem;
   }
 }
-
 .closed::before {
   content: url("@icons/closed.png");
-  vertical-align: -10px;
-  display: inline-block;
-  height: 0px;
-}
-
-.closed {
-  background: none;
+  vertical-align: -0.5rem;
 }
 
 .open::before {
   content: url("@icons/open.png");
-  vertical-align: -10px;
-  display: inline-block;
-  height: 0px;
+  vertical-align: -0.5rem;
 }
 
 .file {
-  display: inline-block;
-  background-image: url("@icons/root-dots.png");
-  background-repeat: repeat-y;
-}
-
-.file::before {
-  content: url("@icons/node-dots.png");
-  vertical-align: -10px;
-  display: inline-block;
-  height: 0px;
-}
-.child {
-  background-image: url("@icons/dots.png");
-  background-repeat: no-repeat, repeat;
+  &::before {
+    content: url("@icons/node-dots.png");
+  }
 }
 
 ul {
-  background-image: url("@icons/dots.png");
-  background-repeat: repeat-y;
-  margin: 0;
-  padding: 0 0 0 15px;
-
   li {
-    line-height: 2rem;
+    background-image: url("@icons/dots.png");
+    background-repeat: repeat-y;
     list-style: none;
+    font-size: 1rem;
+
+    &:last-child {
+      background: none;
+    }
   }
 }
 </style>

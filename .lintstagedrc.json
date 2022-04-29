@@ -1,5 +1,5 @@
 {
   "*": "prettier -u --write",
-  ".{vue}": ["eslint --fix", "ls-lint", "cspell"],
+  ".{vue}": ["eslint --fix", "ls-lint"],
   "README.md": ["markdownlint"]
 }

@@ -3,20 +3,20 @@ import TreeRow from "./TreeRow.vue";
 const treeData = {
   name: "Root Folder",
   children: [
-    { name: "Folder #1" },
-    { name: "Folder #2" },
+    { name: "File #1" },
+    { name: "File #2" },
     {
-      name: "Folder #3",
+      name: "Folder #1",
       children: [
         {
           name: "Subfolder #1",
-          children: [{ name: "Subfolder #1" }, { name: "Subfolder #2" }],
+          children: [{ name: "File #1" }, { name: "File #2" }],
         },
-        { name: "hello" },
-        { name: "wat" },
+        { name: "File" },
+        { name: "File" },
         {
-          name: "child folder",
-          children: [{ name: "hello" }, { name: "wat" }],
+          name: "Folder #2",
+          children: [{ name: "File #1" }, { name: "File #2" }],
         },
       ],
     },
@@ -39,9 +39,3 @@ export default {
     <TreeRow :treedata="userData"></TreeRow>
   </ul>
 </template>
-
-<style scoped>
-ul {
-  background: none;
-}
-</style>
