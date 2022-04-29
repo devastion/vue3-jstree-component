@@ -1,0 +1,5 @@
+ls:
+  src/**/*:
+    .dir: lowercase
+    .vue: PascalCase
+    .js: lowercase
