@@ -22,11 +22,6 @@ export default {
       }
     },
   },
-  watch: {
-    selected() {
-      this.selected = this.$parent.$data.selected;
-    },
-  },
 };
 </script>
 

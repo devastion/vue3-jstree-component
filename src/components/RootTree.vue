@@ -1,6 +1,6 @@
 <script>
 import TreeRow from "./TreeRow.vue";
-import jsonData from "../data.json";
+import jsonData from "../stateless.json";
 
 export default {
   name: "RootTree",
