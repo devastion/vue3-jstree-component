@@ -1,27 +1,7 @@
 <script>
 import TreeRow from "./TreeRow.vue";
-const treeData = {
-  name: "Root Folder",
-  children: [
-    { name: "File #1" },
-    { name: "File #2" },
-    {
-      name: "Folder #1",
-      children: [
-        {
-          name: "Subfolder #1",
-          children: [{ name: "File #1" }, { name: "File #2" }],
-        },
-        { name: "File" },
-        { name: "File" },
-        {
-          name: "Folder #2",
-          children: [{ name: "File #1" }, { name: "File #2" }],
-        },
-      ],
-    },
-  ],
-};
+import jsonData from "../data.json";
+
 export default {
   name: "RootTree",
   components: {
@@ -29,13 +9,30 @@ export default {
   },
   data() {
     return {
-      userData: treeData,
+      userData: jsonData,
     };
   },
 };
 </script>
 <template>
   <ul>
-    <TreeRow :treedata="userData"></TreeRow>
+    <TreeRow
+      v-for="data in userData"
+      :key="data.id"
+      :depth="0"
+      :treedata="data"></TreeRow>
   </ul>
 </template>
+
+<style lang="scss" scoped>
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    ul {
+      background: red;
+    }
+  }
+}
+</style>

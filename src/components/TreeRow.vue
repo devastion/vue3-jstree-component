@@ -3,6 +3,7 @@ export default {
   name: "TreeRow",
   props: {
     treedata: Object,
+    depth: Number,
   },
   data() {
     return {
@@ -21,6 +22,11 @@ export default {
       }
     },
   },
+  watch: {
+    selected() {
+      this.selected = this.$parent.$data.selected;
+    },
+  },
 };
 </script>
 
@@ -28,13 +34,14 @@ export default {
   <li>
     <span
       @click="toggle"
-      :class="[isActive ? 'open' : 'closed', isParent ? 'root ' : 'file']">
+      :class="[isActive ? 'open' : 'closed', isParent ? 'root' : 'file']">
       <span :class="[isParent ? 'root root__icon' : '']" />
       {{ treedata.name }}
-      <input @click.stop type="checkbox" />
+      <input ref="checkbox" @click.stop type="checkbox" />
     </span>
     <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
       <TreeRow
+        :depth="depth + 1"
         v-for="treedata in treedata.children"
         :treedata="treedata"
         :key="treedata.id"></TreeRow>
@@ -43,6 +50,21 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+}
+.undetermined {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  background-color: #41b883;
+  height: 13px;
+  width: 13px;
+}
+
 .root {
   &__icon {
     content: url("@icons/root.png");
@@ -71,7 +93,7 @@ ul {
     background-repeat: repeat-y;
     list-style: none;
     font-size: 1rem;
-
+    cursor: pointer;
     &:last-child {
       background: none;
     }

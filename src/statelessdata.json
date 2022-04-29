@@ -1,0 +1,148 @@
+[
+  {
+    "name": "Root Folder",
+    "id": 1,
+    "children": [
+      {
+        "name": "File #1"
+      },
+      {
+        "name": "File #2"
+      },
+      {
+        "name": "Folder #1",
+
+        "children": [
+          {
+            "name": "Subfolder #1",
+
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          },
+          {
+            "name": "File"
+          },
+          {
+            "name": "File"
+          },
+          {
+            "name": "Folder #2",
+
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Root Folder",
+    "id": 2,
+
+    "children": [
+      {
+        "name": "File #1"
+      },
+      {
+        "name": "File #2"
+      },
+      {
+        "name": "Folder #1",
+
+        "children": [
+          {
+            "name": "Subfolder #1",
+
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          },
+          {
+            "name": "File"
+          },
+          {
+            "name": "File"
+          },
+          {
+            "name": "Folder #2",
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Root Folder",
+    "id": 3,
+    "state": { "selected": false, "undetermined": false },
+
+    "children": [
+      {
+        "name": "File #1"
+      },
+      {
+        "name": "File #2"
+      },
+      {
+        "name": "Folder #1",
+
+        "children": [
+          {
+            "name": "Subfolder #1",
+
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          },
+          {
+            "name": "File"
+          },
+          {
+            "name": "File"
+          },
+          {
+            "name": "Folder #2",
+
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
