@@ -32,15 +32,31 @@ export default {
   },
   watch: {
     isChecked() {
-      console.log(this.$parent.isChecked, this.$parent.depth, this.depth);
-
       if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
-        this.$parent.tristate = true;
+        console.log(
+          `From isChecked:\n ${
+            this.$refs.input.checked
+          } - this.refs.input.checked :\n ${!this.$parent
+            .isChecked} - !this.parent.checked :\n ${
+            this.$parent.depth
+          } - this.parent.depth : \n ${this.depth} - this.depth`
+        );
+
+        this.$refs.input.checked
+          ? (this.$parent.tristate = true)
+          : (this.$parent.tristate = false);
       }
     },
     tristate() {
       if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
-        this.$parent.tristate = true;
+        console.log(
+          `From tristate : \n${!this.$parent
+            .isChecked} - parent !isChecked, - \n${
+            this.$parent.depth
+          } - parent depth \n: ${this.depth} : this.depth`
+        );
+
+        this.$parent.tristate = !this.$parent.tristate;
       }
     },
   },
