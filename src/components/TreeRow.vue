@@ -4,6 +4,7 @@ export default {
   props: {
     treedata: Object,
     depth: Number,
+    isChecked: Boolean,
   },
   data() {
     return {
@@ -14,6 +15,9 @@ export default {
     isParent() {
       return this.treedata.children && this.treedata.children.length;
     },
+    isRoot() {
+      return !this.depth;
+    },
   },
   methods: {
     toggle() {
@@ -22,6 +26,9 @@ export default {
       }
     },
   },
+  // watch: {
+  //   isChecked() {},
+  // },
 };
 </script>
 
@@ -32,10 +39,17 @@ export default {
       :class="[isActive ? 'open' : 'closed', isParent ? 'root' : 'file']">
       <span :class="[isParent ? 'root root__icon' : '']" />
       {{ treedata.name }}
-      <input ref="checkbox" @click.stop type="checkbox" />
+
+      <input
+        :class="{ undetermined: isRoot }"
+        v-model="isChecked"
+        ref="input"
+        @click.stop
+        type="checkbox" />
     </span>
     <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
       <TreeRow
+        :isChecked="this.isChecked"
         :depth="depth + 1"
         v-for="treedata in treedata.children"
         :treedata="treedata"
@@ -64,6 +78,7 @@ input[type="checkbox"] {
   &__icon {
     content: url("@icons/root.png");
     vertical-align: -0.5rem;
+    display: inline-block;
   }
 }
 .closed::before {
@@ -89,6 +104,7 @@ ul {
     list-style: none;
     font-size: 1rem;
     cursor: pointer;
+
     &:last-child {
       background: none;
     }

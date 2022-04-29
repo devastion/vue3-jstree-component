@@ -28,11 +28,5 @@ export default {
 ul {
   margin: 0;
   padding: 0;
-
-  li {
-    ul {
-      background: red;
-    }
-  }
 }
 </style>
