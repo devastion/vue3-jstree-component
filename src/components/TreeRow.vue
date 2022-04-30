@@ -16,12 +16,6 @@ export default {
     isParent() {
       return this.treedata.children && this.treedata.children.length;
     },
-    isRoot(node) {
-      if (!node.depth) {
-        return "undetermined";
-      }
-      return node.depth;
-    },
   },
   methods: {
     toggle() {
@@ -32,30 +26,41 @@ export default {
   },
   watch: {
     isChecked() {
-      if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
-        console.log(
-          `From isChecked:\n ${
-            this.$refs.input.checked
-          } - this.refs.input.checked :\n ${!this.$parent
-            .isChecked} - !this.parent.checked :\n ${
-            this.$parent.depth
-          } - this.parent.depth : \n ${this.depth} - this.depth`
-        );
+      console.log(
+        `---------------\n\nFROM ISCHECKED WATCH\n${
+          this.treedata.name
+        } - THIS NAME, - \n${this.$parent.treedata.name} - THIS PARENT, - \n ${
+          this.$refs.input.checked
+        } - THIS.INPUT.REFS.CHECKED :\n ${!this.$parent
+          .isChecked} - !THIS.PARENT.CHECKED :\n ${
+          this.$parent.depth
+        } - THIS.PARENT.DEPTH : \n ${this.depth} - THIS.DEPTH\n${
+          this.$parent.tristate
+        } - THIS.PARENT.TRISTATE\n${
+          this.tristate
+        } - THIS.TRISTATE\n\n---------------`
+      );
 
-        this.$refs.input.checked
-          ? (this.$parent.tristate = true)
-          : (this.$parent.tristate = false);
+      if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
+        this.$parent.tristate = !this.$parent.tristate;
       }
     },
     tristate() {
       if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
         console.log(
-          `From tristate : \n${!this.$parent
-            .isChecked} - parent !isChecked, - \n${
+          `---------------\n\nFROM TRISTATE : \n${
+            this.treedata.name
+          } - THIS NAME, - \n${
+            this.$parent.treedata.name
+          } - PARENT NAME, - \n${!this.$parent
+            .isChecked} - PARENT NOT !ISCHECKED, - \n${
             this.$parent.depth
-          } - parent depth \n: ${this.depth} : this.depth`
+          } - parent depth \n ${this.depth} : THIS.DEPTH\n${
+            this.$parent.tristate
+          } : THIS.PARENT.TRISTATE\n${
+            this.tristate
+          } : THIS.TRISTATE\n\n---------------`
         );
-
         this.$parent.tristate = !this.$parent.tristate;
       }
     },
@@ -72,7 +77,7 @@ export default {
       {{ treedata.name }}
 
       <input
-        :class="{ undetermined: tristate }"
+        :class="[tristate ? 'undetermined' : '']"
         v-model="isChecked"
         ref="input"
         @click.stop
