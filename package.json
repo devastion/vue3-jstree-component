@@ -1,6 +1,6 @@
 {
   "name": "vue3-jstree-component",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "files": [
     "dist"
   ],
@@ -78,13 +78,13 @@
     "lint-staged": "^12.4.1",
     "markdownlint-cli": "^0.31.1",
     "ntl": "^5.1.0",
-    "pnpm": "^6.32.11",
+    "pnpm": "^7.0.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "sass": "^1.51.0",
     "standard-version": "^9.3.2",
     "vite": "^2.9.6",
     "vitest": "^0.10.0",
-    "vue3-jstree-component": "^0.0.4"
+    "vue3-jstree-component": "^0.0.6"
   }
 }
