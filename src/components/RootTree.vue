@@ -70,6 +70,11 @@ input[type="checkbox"] {
 }
 
 ul {
+  margin: 0;
+  padding: 0;
+  ul {
+    padding-left: 2.25rem;
+  }
   li {
     background-image: url("@icons/dots.svg");
     background-repeat: repeat-y;

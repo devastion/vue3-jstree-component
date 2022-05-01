@@ -2,7 +2,7 @@
 import RootTree from "vue3-jstree-component";
 import jsonData from "./stateless.json";
 export default {
-  components: { RootTree },
+  components: RootTree,
   name: "App",
   data() {
     jsonData;
@@ -14,7 +14,7 @@ export default {
   <RootTree :treedata="jsonData"></RootTree>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 input[type="checkbox"] {
   margin: 0;
   padding: 0;

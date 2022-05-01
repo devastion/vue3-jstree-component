@@ -15,22 +15,18 @@ export default {
   },
   computed: {
     isParent() {
+      if (!this.treedata.children) return false;
       return this.treedata.children && this.treedata.children.length;
     },
     allChildrenSelected() {
-      let truthy = 0;
-      let falsy = 0;
+      if (!this.isParent) return false;
+      let truth = [];
 
-      if (this.isParent) {
-        for (const folder in this.$refs.child) {
-          if (this.$refs.child[folder].selected) {
-            truthy++;
-          }
-          falsy++;
-        }
+      for (const folder in this.$refs.child) {
+        truth.push(this.$refs.child[folder].selected);
       }
 
-      return truthy >= falsy;
+      return truth.every((el) => el);
     },
   },
   methods: {
@@ -40,13 +36,14 @@ export default {
       }
     },
   },
+  updated() {
+    this.$parent.selected = this.$parent.allChildrenSelected;
+  },
 
   watch: {
     selected() {
-      this.$parent.tristate = !this.$parent.allChildrenSelected;
-
-      // If all children are selected => select the parent
-      this.$parent.selected = this.$parent.allChildrenSelected;
+      if (this.selected)
+        this.$parent.tristate = !this.$parent.allChildrenSelected;
     },
     tristate() {
       this.$parent.tristate = !this.$parent.allChildrenSelected;

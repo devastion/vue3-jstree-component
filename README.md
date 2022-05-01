@@ -1,10 +1,13 @@
 # Vue3 JSTree Component
 
-npm i vue3-jstree-component  
-`<RootTree :treedata="jsonData"/>`  
-Less than 20kB unpacked size 🚀
+Under 20kB unpacked size! No hard-coded states.
 
-## Data Input - json file
+## Usage
+
+`npm i vue3-jstree-component`  
+`<RootTree :treedata="myData" />`
+
+## Data Input Format - json file
 
 ```
 [
@@ -16,8 +19,13 @@ Less than 20kB unpacked size 🚀
       "name": "File #1"
     },
     {
-      "name": "File #2"
-    },
-
+      "name": "File #2",
+      "children: [
+        {
+          "name": "Child 1",
+          "name": "Child 2"
+          }
+      ]
+    }
 ]
 ```
