@@ -42,30 +42,36 @@ input[type="checkbox"] {
 
 .root {
   &__icon {
-    content: url("@icons/root.png");
+    content: url("@icons/root.svg");
     vertical-align: -0.5rem;
     display: inline-block;
   }
 }
 .closed::before {
-  content: url("@icons/closed.png");
+  content: url("@icons/closed.svg");
   vertical-align: -0.5rem;
 }
 
 .open::before {
-  content: url("@icons/open.png");
+  content: url("@icons/open.svg");
   vertical-align: -0.5rem;
 }
 
 .file {
+  &__icon {
+    content: url("@icons/file.svg");
+    vertical-align: -0.5rem;
+    display: inline-block;
+  }
+
   &::before {
-    content: url("@icons/node-dots.png");
+    content: url("@icons/node-dots.svg");
   }
 }
 
 ul {
   li {
-    background-image: url("@icons/dots.png");
+    background-image: url("@icons/dots.svg");
     background-repeat: repeat-y;
     list-style: none;
     font-size: 1rem;

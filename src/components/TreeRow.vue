@@ -11,7 +11,6 @@ export default {
       isActive: false,
       tristate: false,
       selected: false,
-      childNodes: 0,
     };
   },
   computed: {
@@ -30,7 +29,7 @@ export default {
           falsy++;
         }
       }
-      this.setChilds(truthy);
+
       return truthy >= falsy;
     },
   },
@@ -40,25 +39,17 @@ export default {
         this.isActive = !this.isActive;
       }
     },
-    setChilds(childs) {
-      this.childNodes = childs;
-    },
   },
-  updated() {
-    if (this.childNodes === 0) this.tristate = false;
-  },
+
   watch: {
     selected() {
       this.$parent.tristate = !this.$parent.allChildrenSelected;
 
+      // If all children are selected => select the parent
       this.$parent.selected = this.$parent.allChildrenSelected;
     },
     tristate() {
-      if (this.$refs.input.value === "false") {
-        if (!this.isParent) {
-          this.tristate = false;
-        }
-      }
+      this.$parent.tristate = !this.$parent.allChildrenSelected;
     },
     checked() {
       if (this.checked) this.selected = this.checked;
@@ -75,7 +66,7 @@ export default {
     <span
       @click="toggle"
       :class="[isActive ? 'open' : 'closed', isParent ? 'root' : 'file']">
-      <span :class="[isParent ? 'root root__icon' : '']" />
+      <span :class="[isParent ? 'root root__icon' : 'file__icon']" />
       {{ treedata.name }}
 
       <input
@@ -89,7 +80,7 @@ export default {
     <div>
       <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
         <tree-row
-          :checked="this.selected"
+          :checked="selected"
           ref="child"
           :depth="depth + 1"
           v-for="treedata in treedata.children"
