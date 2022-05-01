@@ -98,7 +98,6 @@
   {
     "name": "Root Folder",
     "id": 3,
-    "state": { "selected": false, "undetermined": false },
 
     "children": [
       {
@@ -131,6 +130,36 @@
           },
           {
             "name": "Folder #2",
+
+            "children": [
+              {
+                "name": "File #1"
+              },
+              {
+                "name": "File #2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Root Folder",
+    "id": 4,
+    "children": [
+      {
+        "name": "File #1"
+      },
+      {
+        "name": "File #2"
+      },
+      {
+        "name": "Folder #1",
+
+        "children": [
+          {
+            "name": "Subfolder #1",
 
             "children": [
               {
