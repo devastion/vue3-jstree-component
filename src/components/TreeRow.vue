@@ -21,7 +21,6 @@ export default {
     allChildrenSelected() {
       if (!this.isParent) return false;
       let truth = [];
-
       for (const folder in this.$refs.child) {
         truth.push(this.$refs.child[folder].selected);
       }
@@ -47,6 +46,7 @@ export default {
     },
     tristate() {
       this.$parent.tristate = !this.$parent.allChildrenSelected;
+      if (this.tristate) this.$parent.tristate = this.tristate;
     },
     checked() {
       if (this.checked) this.selected = this.checked;
@@ -76,13 +76,13 @@ export default {
     </span>
     <div>
       <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
-        <tree-row
+        <TreeRow
           :checked="selected"
           ref="child"
           :depth="depth + 1"
           v-for="treedata in treedata.children"
           :treedata="treedata"
-          :key="treedata.id" />
+          :key="treedata.id"></TreeRow>
       </ul>
     </div>
   </li>

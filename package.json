@@ -2,7 +2,7 @@
   "name": "vue3-jstree-component",
   "version": "0.0.7",
   "files": [
-    "dist"
+    "dist/*"
   ],
   "main": "./dist/vue3-jstree-component.umd.js",
   "module": "./dist/vue3-jstree-component.es.js",
@@ -84,7 +84,6 @@
     "sass": "^1.51.0",
     "standard-version": "^9.3.2",
     "vite": "^2.9.6",
-    "vitest": "^0.10.0",
-    "vue3-jstree-component": "^0.0.6"
+    "vitest": "^0.10.0"
   }
 }
