@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file. See
 [standard-version](https://github.com/conventional-changelog/standard-version)
 for commit guidelines.
 
+### [0.0.4](https://github.com/devastion/vue3-jstree-component/compare/v0.0.3...v0.0.4) (2022-05-01)
+
+### Features
+
+- did it without store 🚀
+  ([b17f71d](https://github.com/devastion/vue3-jstree-component/commit/b17f71df9df2bec47c17a8d7a94cc52e62a19370))
+- job done chore: refactor the code
+  ([6bb55f2](https://github.com/devastion/vue3-jstree-component/commit/6bb55f2ca5b826dd2249200454ae67d8a79bcc3d))
+
+### Bug Fixes
+
+- ref
+  ([1b82296](https://github.com/devastion/vue3-jstree-component/commit/1b822962320d609258b312f5554f2f86e410e5cf))
+- tristate checking
+  ([7e86ed0](https://github.com/devastion/vue3-jstree-component/commit/7e86ed0bfc99056f6d1a1ebe4a7b6aebaba37d02))
+
 ### [0.0.3](https://github.com/devastion/vue3-jstree-component/compare/v0.0.2...v0.0.3) (2022-04-29)
 
 ### Refactor
