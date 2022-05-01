@@ -16,11 +16,11 @@ export default {
 </script>
 <template>
   <ul>
-    <TreeRow
+    <tree-row
       v-for="data in userData"
       :key="data.id"
       :depth="0"
-      :treedata="data"></TreeRow>
+      :treedata="data"></tree-row>
   </ul>
 </template>
 
@@ -42,30 +42,30 @@ input[type="checkbox"] {
 
 .root {
   &__icon {
-    content: url("@icons/root.svg");
+    content: url("@icons/root.png");
     vertical-align: -0.5rem;
     display: inline-block;
   }
 }
 .closed::before {
-  content: url("@icons/closed.svg");
+  content: url("@icons/closed.png");
   vertical-align: -0.5rem;
 }
 
 .open::before {
-  content: url("@icons/open.svg");
+  content: url("@icons/open.png");
   vertical-align: -0.5rem;
 }
 
 .file {
   &__icon {
-    content: url("@icons/file.svg");
+    content: url("@icons/file.png");
     vertical-align: -0.5rem;
     display: inline-block;
   }
 
   &::before {
-    content: url("@icons/node-dots.svg");
+    content: url("@icons/node-dots.png");
   }
 }
 
@@ -76,7 +76,7 @@ ul {
     padding-left: 2.25rem;
   }
   li {
-    background-image: url("@icons/dots.svg");
+    background-image: url("@icons/dots.png");
     background-repeat: repeat-y;
     list-style: none;
     font-size: 1rem;
