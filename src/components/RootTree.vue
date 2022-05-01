@@ -25,10 +25,6 @@ export default {
 </template>
 
 <style lang="scss">
-:root {
-  background-color: #2a2a2a;
-  color: #9a9a9a;
-}
 input[type="checkbox"] {
   margin: 0;
   padding: 0;

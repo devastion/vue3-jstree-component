@@ -21,7 +21,8 @@ export default {
       return false;
     },
 
-    // TODO REFACTOR
+    // TODO REFACTOR: Merge allChildrenSelected and singleChildSelected
+    // ! "|| false" in case it's not parent and I need value instead undefined
     allChildrenSelected() {
       if (!this.isParent) return false;
       let allAreSelected = [];
@@ -51,30 +52,42 @@ export default {
       }
     },
   },
-  created() {
-    this.toggle();
-  },
+
   watch: {
     isChecked() {
-      if (this.$parent.singleChildSelected)
+      // * Add mid state to parents
+      if (
+        this.$parent.singleChildSelected &&
+        !this.$parent.allChildrenSelected
+      ) {
         this.$parent.isUndetermined = this.$parent.singleChildSelected;
+      }
 
       if (!this.$parent.singleChildSelected) {
         this.$parent.isChecked = this.$parent.singleChildSelected;
         this.$parent.isUndetermined = this.$parent.singleChildSelected;
       }
-
+      // * If all children selected change stage from mid state to enabled
       if (this.$parent.allChildrenSelected) {
-        this.$parent.isChecked = this.isChecked;
-        this.$parent.isUndetermined = !this.isChecked;
+        this.$parent.isChecked = true;
+        this.$parent.isUndetermined = false;
       }
     },
     isUndetermined() {
-      if (this.isUndetermined && this.singleChildSelected) {
+      if (this.isUndetermined && !this.isChecked) {
         this.$parent.isUndetermined = this.isUndetermined;
-        if (this.depth === 0) this.isUndetermined = undefined;
+      }
+
+      // * Reverse
+      if (
+        !this.isUndetermined &&
+        this.depth > this.$parent.depth &&
+        !this.isChecked
+      ) {
+        this.$parent.isUndetermined = this.isUndetermined;
       }
     },
+    // * SELECT / DESELECT CHILDS
     selectchildren() {
       if (this.selectchildren) this.isChecked = this.selectchildren;
       if (!this.selectchildren) {
