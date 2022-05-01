@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Root Folder",
+    "id": 1,
+    "children": [
+      {
+        "name": "File #1",
+        "id": 2
+      },
+      {
+        "name": "File #2",
+        "id": 3
+      },
+      {
+        "name": "Folder #1",
+        "id": 4,
+        "children": [
+          {
+            "name": "Subfolder #1",
+            "id": 6,
+
+            "children": [
+              {
+                "name": "File #1",
+                "id": 7
+              },
+              {
+                "name": "File #2",
+                "id": 8
+              }
+            ]
+          },
+          {
+            "name": "File",
+            "id": 9
+          },
+          {
+            "name": "File",
+            "id": 10
+          },
+          {
+            "name": "Folder #2",
+            "id": 11
+          }
+        ]
+      }
+    ]
+  }
+]

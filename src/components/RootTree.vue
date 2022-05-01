@@ -7,9 +7,12 @@ export default {
   components: {
     TreeRow,
   },
+  options: {
+    customData: Object,
+  },
   data() {
     return {
-      userData: jsonData,
+      userData: this.customData || jsonData,
     };
   },
 };
