@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. See
 [standard-version](https://github.com/conventional-changelog/standard-version)
 for commit guidelines.
 
+### [0.0.5](https://github.com/devastion/vue3-jstree-component/compare/v0.0.4...v0.0.5) (2022-05-01)
+
+### Features
+
+- update
+  ([4463723](https://github.com/devastion/vue3-jstree-component/commit/4463723f168064ac2e6676cf18874fc3bb06741d))
+
 ### [0.0.4](https://github.com/devastion/vue3-jstree-component/compare/v0.0.3...v0.0.4) (2022-05-01)
 
 ### Features
