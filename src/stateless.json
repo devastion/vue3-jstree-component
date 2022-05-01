@@ -50,6 +50,51 @@
               {
                 "name": "File #2",
                 "id": 13
+              },
+              {
+                "name": "Folder #1",
+                "id": 14,
+
+                "children": [
+                  {
+                    "name": "File #1",
+                    "id": 15
+                  },
+                  {
+                    "name": "File #2",
+                    "id": 16
+                  },
+                  {
+                    "name": "Folder #1",
+                    "id": 17,
+
+                    "children": [
+                      {
+                        "name": "File #1",
+                        "id": 18
+                      },
+                      {
+                        "name": "File #2",
+                        "id": 19
+                      },
+                      {
+                        "name": "Folder #1",
+                        "id": 20,
+
+                        "children": [
+                          {
+                            "name": "File #1",
+                            "id": 21
+                          },
+                          {
+                            "name": "File #2",
+                            "id": 22
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
