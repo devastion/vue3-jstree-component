@@ -1,8 +1,12 @@
 # Vue3 JSTree Component
 
-Under 100kB unpacked size! No hard-coded states.
+## Demo
+
+![Demo](./demo.gif)
 
 ## Usage
+
+Using json file for parsing data
 
 `npm i vue3-jstree-component`  
 `<RootTree :treedata="myData" />`

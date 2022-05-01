@@ -35,21 +35,19 @@ export default {
       }
     },
   },
-  updated() {
-    this.$parent.selected = this.$parent.allChildrenSelected;
-  },
 
   watch: {
     selected() {
-      if (this.selected)
-        this.$parent.tristate = !this.$parent.allChildrenSelected;
+      this.$parent.tristate = !this.$parent.allChildrenSelected;
+      this.$parent.selected = this.$parent.allChildrenSelected;
     },
     tristate() {
       this.$parent.tristate = !this.$parent.allChildrenSelected;
-      if (this.tristate) this.$parent.tristate = this.tristate;
     },
     checked() {
-      if (this.checked) this.selected = this.checked;
+      if (this.checked) {
+        this.selected = this.checked;
+      }
       if (!this.checked) {
         this.selected = this.$parent.selected;
       }
