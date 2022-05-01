@@ -29,6 +29,7 @@ input[type="checkbox"] {
   margin: 0;
   padding: 0;
 }
+
 .undetermined {
   -webkit-appearance: none;
   -moz-appearance: none;

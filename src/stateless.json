@@ -4,169 +4,52 @@
     "id": 1,
     "children": [
       {
-        "name": "File #1"
+        "name": "File #1",
+        "id": 2
       },
       {
-        "name": "File #2"
+        "name": "File #2",
+        "id": 3
       },
       {
         "name": "Folder #1",
-
+        "id": 4,
         "children": [
           {
             "name": "Subfolder #1",
+            "id": 6,
 
             "children": [
               {
-                "name": "File #1"
+                "name": "File #1",
+                "id": 7
               },
               {
-                "name": "File #2"
+                "name": "File #2",
+                "id": 8
               }
             ]
           },
           {
-            "name": "File"
+            "name": "File",
+            "id": 9
           },
           {
-            "name": "File"
+            "name": "File",
+            "id": 10
           },
           {
             "name": "Folder #2",
+            "id": 11,
 
             "children": [
               {
-                "name": "File #1"
+                "name": "File #1",
+                "id": 12
               },
               {
-                "name": "File #2"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Root Folder",
-    "id": 2,
-
-    "children": [
-      {
-        "name": "File #1"
-      },
-      {
-        "name": "File #2"
-      },
-      {
-        "name": "Folder #1",
-
-        "children": [
-          {
-            "name": "Subfolder #1",
-
-            "children": [
-              {
-                "name": "File #1"
-              },
-              {
-                "name": "File #2"
-              }
-            ]
-          },
-          {
-            "name": "File"
-          },
-          {
-            "name": "File"
-          },
-          {
-            "name": "Folder #2",
-            "children": [
-              {
-                "name": "File #1"
-              },
-              {
-                "name": "File #2"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Root Folder",
-    "id": 3,
-
-    "children": [
-      {
-        "name": "File #1"
-      },
-      {
-        "name": "File #2"
-      },
-      {
-        "name": "Folder #1",
-
-        "children": [
-          {
-            "name": "Subfolder #1",
-
-            "children": [
-              {
-                "name": "File #1"
-              },
-              {
-                "name": "File #2"
-              }
-            ]
-          },
-          {
-            "name": "File"
-          },
-          {
-            "name": "File"
-          },
-          {
-            "name": "Folder #2",
-
-            "children": [
-              {
-                "name": "File #1"
-              },
-              {
-                "name": "File #2"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "Root Folder",
-    "id": 4,
-    "children": [
-      {
-        "name": "File #1"
-      },
-      {
-        "name": "File #2"
-      },
-      {
-        "name": "Folder #1",
-
-        "children": [
-          {
-            "name": "Subfolder #1",
-
-            "children": [
-              {
-                "name": "File #1"
-              },
-              {
-                "name": "File #2"
+                "name": "File #2",
+                "id": 13
               }
             ]
           }

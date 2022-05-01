@@ -4,28 +4,31 @@ export default {
   props: {
     treedata: Object,
     depth: Number,
-    checked: Boolean,
   },
+
   data() {
     return {
       isActive: false,
-      tristate: false,
-      selected: false,
+      isChecked: false,
+      isUndetermined: false,
+      singleIsSelected: false,
     };
   },
   computed: {
     isParent() {
-      if (!this.treedata.children) return false;
-      return this.treedata.children && this.treedata.children.length;
+      const { children } = this.treedata;
+      if (children) return children && children.length > 0;
+      return false;
     },
     allChildrenSelected() {
       if (!this.isParent) return false;
-      let truth = [];
-      for (const folder in this.$refs.child) {
-        truth.push(this.$refs.child[folder].selected);
-      }
+      let allAreSelected = [];
 
-      return truth.every((el) => el);
+      for (const folder in this.$refs.child) {
+        allAreSelected.push(this.$refs.child[folder].isChecked);
+        if (this.$refs.child[folder].isChecked) this.setSingleIsSelected(true);
+      }
+      return allAreSelected.every((el) => el);
     },
   },
   methods: {
@@ -34,22 +37,24 @@ export default {
         this.isActive = !this.isActive;
       }
     },
+    setSingleIsSelected(val) {
+      this.singleIsSelected = val;
+    },
   },
 
   watch: {
-    selected() {
-      this.$parent.tristate = !this.$parent.allChildrenSelected;
-      this.$parent.selected = this.$parent.allChildrenSelected;
-    },
-    tristate() {
-      this.$parent.tristate = !this.$parent.allChildrenSelected;
-    },
-    checked() {
-      if (this.checked) {
-        this.selected = this.checked;
+    isChecked() {
+      if (!this.$parent.isUndetermined && !this.$parent.isChecked)
+        this.$parent.isUndetermined = this.isChecked;
+
+      if (this.$parent.allChildrenSelected) {
+        this.$parent.isChecked = this.isChecked;
+        this.$parent.isUndetermined = !this.isChecked;
       }
-      if (!this.checked) {
-        this.selected = this.$parent.selected;
+    },
+    isUndetermined() {
+      if (this.isUndetermined) {
+        this.$parent.isUndetermined = this.isUndetermined;
       }
     },
   },
@@ -62,20 +67,17 @@ export default {
       @click="toggle"
       :class="[isActive ? 'open' : 'closed', isParent ? 'root' : 'file']">
       <span :class="[isParent ? 'root root__icon' : 'file__icon']" />
-      {{ treedata.name }}
+      {{ this.depth + " . " + treedata.name }}
 
       <input
-        :class="[tristate ? 'undetermined' : '']"
-        v-model="selected"
-        :value="checked"
-        ref="input"
+        :class="{ undetermined: isUndetermined }"
+        v-model="isChecked"
         @click.stop
         type="checkbox" />
     </span>
     <div>
       <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
         <tree-row
-          :checked="selected"
           ref="child"
           :depth="depth + 1"
           v-for="treedata in treedata.children"
