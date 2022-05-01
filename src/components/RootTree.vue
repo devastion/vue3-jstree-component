@@ -9,18 +9,18 @@ export default {
   },
   data() {
     return {
-      userData: this.customData || jsonData,
+      userData: jsonData,
     };
   },
 };
 </script>
 <template>
   <ul>
-    <TreeRow
+    <tree-row
       v-for="data in userData"
       :key="data.id"
       :depth="0"
-      :treedata="data"></TreeRow>
+      :treedata="data"></tree-row>
   </ul>
 </template>
 
