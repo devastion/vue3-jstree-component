@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file. See
 [standard-version](https://github.com/conventional-changelog/standard-version)
 for commit guidelines.
 
+### [0.0.6](https://github.com/devastion/vue3-jstree-component/compare/v0.0.5...v0.0.6) (2022-05-01)
+
+### Features
+
+- fixed scoped styles
+  ([dced992](https://github.com/devastion/vue3-jstree-component/commit/dced9924be7fb71dcca64601c41584bc15042b53))
+- svg icons
+  ([d1c4a15](https://github.com/devastion/vue3-jstree-component/commit/d1c4a15137f6f15d8e446bf56e2b5c1248d5ea66))
+
+### Docs
+
+- updating the docs
+  ([856a2a4](https://github.com/devastion/vue3-jstree-component/commit/856a2a4fc307ff402156ff8000ab4794133aacfe))
+
 ### [0.0.5](https://github.com/devastion/vue3-jstree-component/compare/v0.0.4...v0.0.5) (2022-05-01)
 
 ### Features
