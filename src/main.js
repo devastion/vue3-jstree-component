@@ -1,3 +1,3 @@
 import { createApp } from "vue";
-import RootTree from "./components/RootTree.vue";
-createApp(RootTree).mount("#app");
+import App from "./App.vue";
+createApp(App).mount("#app");

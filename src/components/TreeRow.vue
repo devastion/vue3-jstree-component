@@ -100,7 +100,7 @@ export default {
   </li>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 input[type="checkbox"] {
   margin: 0;
   padding: 0;
