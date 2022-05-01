@@ -15,15 +15,13 @@ export default {
 };
 </script>
 <template>
-  <div>
-    <ul>
-      <TreeRow
-        v-for="data in userData"
-        :key="data.id"
-        :depth="0"
-        :treedata="data"></TreeRow>
-    </ul>
-  </div>
+  <ul>
+    <TreeRow
+      v-for="data in userData"
+      :key="data.id"
+      :depth="0"
+      :treedata="data"></TreeRow>
+  </ul>
 </template>
 
 <style lang="scss" scoped>

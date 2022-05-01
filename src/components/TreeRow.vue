@@ -10,11 +10,15 @@ export default {
     return {
       isActive: false,
       tristate: false,
+      selected: this.isChecked || false,
     };
   },
   computed: {
     isParent() {
       return this.treedata.children && this.treedata.children.length;
+    },
+    getThisState() {
+      return this.selected;
     },
   },
   methods: {
@@ -24,44 +28,32 @@ export default {
       }
     },
   },
-  watch: {
-    isChecked() {
-      console.log(
-        `---------------\n\nFROM ISCHECKED WATCH\n${
-          this.treedata.name
-        } - THIS NAME, - \n${this.$parent.treedata.name} - THIS PARENT, - \n ${
-          this.$refs.input.checked
-        } - THIS.INPUT.REFS.CHECKED :\n ${!this.$parent
-          .isChecked} - !THIS.PARENT.CHECKED :\n ${
-          this.$parent.depth
-        } - THIS.PARENT.DEPTH : \n ${this.depth} - THIS.DEPTH\n${
-          this.$parent.tristate
-        } - THIS.PARENT.TRISTATE\n${
-          this.tristate
-        } - THIS.TRISTATE\n\n---------------`
-      );
+  updated() {},
 
-      if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
-        this.$parent.tristate = !this.$parent.tristate;
+  watch: {
+    selected() {
+      if (!this.$parent.selected === this.selected) {
+        this.$parent.tristate = true;
+      }
+      if (this.$parent.tristate) {
+        this.$parent.tristate = false;
+        this.tristate = false;
+      }
+    },
+    isChecked() {
+      if (this.$parent.tristate) {
+        this.selected = this.$parent.selected;
+      } else {
+        this.selected = false;
+      }
+      if (this.$parent.selected) {
+        this.selected = this.$parent.selected;
       }
     },
     tristate() {
-      if (!this.$parent.isChecked && this.$parent.depth < this.depth) {
-        console.log(
-          `---------------\n\nFROM TRISTATE : \n${
-            this.treedata.name
-          } - THIS NAME, - \n${
-            this.$parent.treedata.name
-          } - PARENT NAME, - \n${!this.$parent
-            .isChecked} - PARENT NOT !ISCHECKED, - \n${
-            this.$parent.depth
-          } - parent depth \n ${this.depth} : THIS.DEPTH\n${
-            this.$parent.tristate
-          } : THIS.PARENT.TRISTATE\n${
-            this.tristate
-          } : THIS.TRISTATE\n\n---------------`
-        );
+      if (!this.$parent.isChecked && this.depth > this.$parent.depth) {
         this.$parent.tristate = !this.$parent.tristate;
+        this.tristate = true;
       }
     },
   },
@@ -78,19 +70,22 @@ export default {
 
       <input
         :class="[tristate ? 'undetermined' : '']"
-        v-model="isChecked"
+        v-model="selected"
+        :value="selected"
         ref="input"
         @click.stop
         type="checkbox" />
     </span>
-    <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
-      <TreeRow
-        :isChecked="this.isChecked"
-        :depth="depth + 1"
-        v-for="treedata in treedata.children"
-        :treedata="treedata"
-        :key="treedata.id"></TreeRow>
-    </ul>
+    <div>
+      <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
+        <tree-row
+          :isChecked="selected"
+          :depth="depth + 1"
+          v-for="treedata in treedata.children"
+          :treedata="treedata"
+          :key="treedata.id" />
+      </ul>
+    </div>
   </li>
 </template>
 
