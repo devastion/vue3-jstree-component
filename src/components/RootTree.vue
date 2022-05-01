@@ -1,14 +1,11 @@
 <script>
 import TreeRow from "./TreeRow.vue";
-import jsonData from "../stateless.json";
+import jsonData from "@/stateless.json";
 
 export default {
   name: "RootTree",
   components: {
     TreeRow,
-  },
-  options: {
-    customData: Object,
   },
   data() {
     return {
@@ -19,11 +16,11 @@ export default {
 </script>
 <template>
   <ul>
-    <tree-row
+    <TreeRow
       v-for="data in userData"
       :key="data.id"
       :depth="0"
-      :treedata="data"></tree-row>
+      :treedata="data"></TreeRow>
   </ul>
 </template>
 

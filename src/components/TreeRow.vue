@@ -114,13 +114,13 @@ export default {
     </span>
     <div>
       <ul v-show="isActive" v-if="isParent" :class="{ child: isParent }">
-        <tree-row
+        <TreeRow
           :selectchildren="isChecked"
           ref="child"
           :depth="depth + 1"
           v-for="treedata in treedata.children"
           :treedata="treedata"
-          :key="treedata.id"></tree-row>
+          :key="treedata.id"></TreeRow>
       </ul>
     </div>
   </li>

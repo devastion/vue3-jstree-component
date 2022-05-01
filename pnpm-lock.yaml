@@ -29,7 +29,7 @@ specifiers:
   vite: ^2.9.6
   vitest: ^0.10.0
   vue: ^3.2.33
-  vue3-jstree-component: ^0.0.10
+  vue3-jstree-component: ^0.0.11
 
 dependencies:
   vue: 3.2.33
@@ -62,7 +62,7 @@ devDependencies:
   standard-version: 9.3.2
   vite: 2.9.6_sass@1.51.0
   vitest: 0.10.0_j5kl4564e5aqlm5vmdwszek7j4
-  vue3-jstree-component: 0.0.10
+  vue3-jstree-component: 0.0.11
 
 packages:
 
@@ -4647,8 +4647,8 @@ packages:
       '@vue/server-renderer': 3.2.33_vue@3.2.33
       '@vue/shared': 3.2.33
 
-  /vue3-jstree-component/0.0.10:
-    resolution: {integrity: sha512-tak/8HJlrF0dcAe+cBXbuA8K7PRE8JpO9I4tsJiXqRN+OfJJjA6v/D7Hxl5174f2lX9gmnM5R6eYPv8NXwAIvw==}
+  /vue3-jstree-component/0.0.11:
+    resolution: {integrity: sha512-PYhQK6X3XgFzMD9JydGKi8xHR+0Fc5Pvc7LYWsSND5xz6QzAcVu7UIx15fJdddXo3MRAw13hMqBvXMehlXph/Q==}
     dependencies:
       vue: 3.2.33
     dev: true
