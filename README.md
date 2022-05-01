@@ -1,6 +1,6 @@
 # Vue3 JSTree Component
 
-Under 20kB unpacked size! No hard-coded states.
+Under 100kB unpacked size! No hard-coded states.
 
 ## Usage
 

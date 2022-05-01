@@ -21,7 +21,7 @@ specifiers:
   lint-staged: ^12.4.1
   markdownlint-cli: ^0.31.1
   ntl: ^5.1.0
-  pnpm: ^6.32.11
+  pnpm: ^7.0.0
   prettier: ^2.6.2
   rimraf: ^3.0.2
   sass: ^1.51.0
@@ -29,7 +29,7 @@ specifiers:
   vite: ^2.9.6
   vitest: ^0.10.0
   vue: ^3.2.33
-  vue3-jstree-component: ^0.0.4
+  vue3-jstree-component: ^0.0.6
 
 dependencies:
   vue: 3.2.33
@@ -55,14 +55,14 @@ devDependencies:
   lint-staged: 12.4.1
   markdownlint-cli: 0.31.1
   ntl: 5.1.0
-  pnpm: 6.32.11
+  pnpm: 7.0.0
   prettier: 2.6.2
   rimraf: 3.0.2
   sass: 1.51.0
   standard-version: 9.3.2
   vite: 2.9.6_sass@1.51.0
   vitest: 0.10.0_j5kl4564e5aqlm5vmdwszek7j4
-  vue3-jstree-component: 0.0.4
+  vue3-jstree-component: 0.0.6
 
 packages:
 
@@ -3667,9 +3667,9 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pnpm/6.32.11:
-    resolution: {integrity: sha512-KIb3ImAEGl03aJNy0pai7J0mWn52GJwRrUllxUZwibhLdUoeOuDjXhNSgRxxW9BH2gR91b3UadxzdAvhehmM8w==}
-    engines: {node: '>=12.17'}
+  /pnpm/7.0.0:
+    resolution: {integrity: sha512-5njVSmE/Sz6coyikS6gjwoKWaxxsJ6BY6jL1aqwvnEpNUfFednbHqid3aZ42JszOFaSOz3Qipcfp4ei22G/JEg==}
+    engines: {node: '>=14.19'}
     hasBin: true
     dev: true
 
@@ -4647,8 +4647,8 @@ packages:
       '@vue/server-renderer': 3.2.33_vue@3.2.33
       '@vue/shared': 3.2.33
 
-  /vue3-jstree-component/0.0.4:
-    resolution: {integrity: sha512-Uyq7t385KkjIKquixBOf4jkH/Hsv6+QnQHBXbx7r4OIpxESeDIOo9KUjpBb9JXYGFW3P8usva7PQJYfay+3wWg==}
+  /vue3-jstree-component/0.0.6:
+    resolution: {integrity: sha512-v+7pIQPS3IqU3mxigDg8GNpImS+So0D9RKn+XXNFm70TnK2oIQO2LTB6aW0VICi3xEOXfCw4NSpHrb9FlwtSrw==}
     dependencies:
       vue: 3.2.33
     dev: true
