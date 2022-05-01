@@ -33,3 +33,10 @@ Using json file for parsing data
     }
 ]
 ```
+
+## TO DO
+
+- Refactor allChildrenSelected & singleChildrenSelected functions
+- To emit the components instead using props
+- Try to ditch off the watchers
+- Add styles
