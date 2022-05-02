@@ -1,11 +1,7 @@
+import RootTreeVue from "@/components/RootTree.vue";
 import { createApp } from "vue";
-import Vue from "vue";
-// import RootTree from "./components/RootTree.vue";
-import RootTree from "vue3-jstree-component";
-import App from "./App.vue";
-const app = createApp(App, {
-  customData: "./stateless.json",
-});
 
-// app.mount("#app");
-createApp(App).mount("#app");
+// import RootTree from "vue3-jstree-component";
+const app = createApp(RootTreeVue);
+// app.component("RootTree", RootTree);
+// const mounted = app.mount("#app");

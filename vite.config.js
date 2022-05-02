@@ -1,10 +1,10 @@
 import { fileURLToPath, URL } from "url";
 import path from "path";
-import { defineConfig } from "vite";
+
 import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default {
   test: {
     globals: true,
     environment: "happy-dom",
@@ -18,7 +18,8 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve("src/install.js"),
+      // eslint-disable-next-line no-undef
+      entry: path.resolve(__dirname, "src/install.js"),
       name: "vue3-jstree-component",
       fileName: (format) => `vue3-jstree-component.${format}.js`,
     },
@@ -32,4 +33,4 @@ export default defineConfig({
       },
     },
   },
-});
+};
