@@ -5,4 +5,5 @@ export default {
     Vue.component("root-tree", RootTree);
   },
 };
+export { default as RootTree } from "@/components/RootTree.vue";
 // export default RootTree;

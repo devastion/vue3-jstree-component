@@ -1,15 +1,17 @@
 <script>
-import RootTree from "vue3-jstree-component";
+import RootTree from "@/components/RootTree.vue";
 import jsonData from "@/data.json";
-import stateless from "@/stateless.json";
+import otherData from "@/stateless.json";
 
 export default {
   components: { RootTree },
-  data() {
-    jsonData;
+  data: function () {
+    return {
+      userData: jsonData,
+    };
   },
 };
 </script>
 <template>
-  <RootTree :treedata="jsonData"></RootTree>
+  <root-tree :userData="userData"></root-tree>
 </template>
