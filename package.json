@@ -1,6 +1,6 @@
 {
   "name": "vue3-jstree-component",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "files": [
     "dist/*"
   ],
@@ -55,7 +55,8 @@
     }
   },
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue3-jstree-component": "^0.0.14"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",
