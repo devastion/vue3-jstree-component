@@ -53,6 +53,10 @@ export default {
     },
   },
 
+  created() {
+    this.toggle();
+  },
+
   watch: {
     isChecked() {
       // * Add mid state to parents
@@ -63,14 +67,24 @@ export default {
         this.$parent.isUndetermined = this.$parent.singleChildSelected;
       }
 
+      // ! Access only oh the same depth or lower
+      if (
+        !this.$parent.singleChildSelected &&
+        this.depth < this.$parent.depth
+      ) {
+        this.$parent.isUndetermined = this.$parent.singleChildSelected;
+        this.$parent.isChecked = this.$parent.allChildrenSelected;
+      }
+
       if (!this.$parent.singleChildSelected) {
-        this.$parent.isChecked = this.$parent.singleChildSelected;
+        this.$parent.isChecked = false;
         this.$parent.isUndetermined = this.$parent.singleChildSelected;
       }
+
       // * If all children selected change stage from mid state to enabled
       if (this.$parent.allChildrenSelected) {
-        this.$parent.isChecked = true;
-        this.$parent.isUndetermined = false;
+        this.$parent.isChecked = this.$parent.allChildrenSelected;
+        this.$parent.isUndetermined = !this.$parent.allChildrenSelected;
       }
 
       if (
@@ -78,20 +92,23 @@ export default {
         this.$parent.singleChildSelected &&
         this.$parent.depth < this.depth
       ) {
-        this.$parent.isUndetermined = this.isChecked;
+        this.$parent.isUndetermined = true;
         this.$parent.isChecked = false;
       }
     },
+
     isUndetermined() {
-      if (this.isUndetermined && !this.isChecked) {
+      // ? State to parents
+      if (this.isUndetermined && !this.$parent.singleChildSelected) {
         this.$parent.isUndetermined = this.isUndetermined;
       }
 
       // * Reverse
       if (
         !this.isUndetermined &&
-        this.depth > this.$parent.depth &&
-        !this.isChecked
+        !this.isChecked &&
+        !this.$parent.singleChildSelected &&
+        this.depth > this.$parent.depth
       ) {
         this.$parent.isUndetermined = this.isUndetermined;
       }

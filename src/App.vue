@@ -3,9 +3,9 @@
 // import RootTree from "@/components/RootTree.vue";
 import jsonData from "@/data.json";
 import otherData from "@/stateless.json";
-// import RootTree from "./components/RootTree.vue";
-import { RootTree } from "vue3-jstree-component";
-import "../node_modules/vue3-jstree-component/dist/style.css";
+import RootTree from "./components/RootTree.vue";
+// import { RootTree } from "vue3-jstree-component";
+// import "../node_modules/vue3-jstree-component/dist/style.css";
 
 export default {
   components: { RootTree },

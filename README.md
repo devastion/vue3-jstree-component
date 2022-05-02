@@ -9,8 +9,8 @@
 Using json file for parsing data
 
 `npm i vue3-jstree-component`  
-`import { RootTree } from "vue3-jstree-component"`
-`import "../node_modules/vue3-jstree-component/dist/style.css"`
+`import { RootTree } from "vue3-jstree-component"`  
+`import "../node_modules/vue3-jstree-component/dist/style.css"`  
 `<RootTree :userData="myData" />`
 
 ### Example Fie
@@ -64,6 +64,6 @@ export default {
 ## TO DO
 
 - Refactor allChildrenSelected & singleChildrenSelected functions
+- !!! Styles in JS
 - To emit the components instead using props
 - Try to ditch off the watchers
-- Add styles

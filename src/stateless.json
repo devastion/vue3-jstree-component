@@ -76,21 +76,21 @@
                       {
                         "name": "File #2",
                         "id": 19
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Folder #2",
+                    "id": 20,
+
+                    "children": [
+                      {
+                        "name": "File #1",
+                        "id": 21
                       },
                       {
-                        "name": "Folder #1",
-                        "id": 20,
-
-                        "children": [
-                          {
-                            "name": "File #1",
-                            "id": 21
-                          },
-                          {
-                            "name": "File #2",
-                            "id": 19
-                          }
-                        ]
+                        "name": "File #2",
+                        "id": 19
                       }
                     ]
                   }
