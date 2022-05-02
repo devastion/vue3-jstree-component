@@ -72,6 +72,15 @@ export default {
         this.$parent.isChecked = true;
         this.$parent.isUndetermined = false;
       }
+
+      if (
+        !this.$parent.isChecked &&
+        this.$parent.singleChildSelected &&
+        this.$parent.depth < this.depth
+      ) {
+        this.$parent.isUndetermined = this.isChecked;
+        this.$parent.isChecked = false;
+      }
     },
     isUndetermined() {
       if (this.isUndetermined && !this.isChecked) {

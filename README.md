@@ -9,7 +9,34 @@
 Using json file for parsing data
 
 `npm i vue3-jstree-component`  
-`<RootTree :treedata="myData" />`
+`import { RootTree } from "vue3-jstree-component"`
+`import "../node_modules/vue3-jstree-component/dist/style.css"`
+`<RootTree :userData="myData" />`
+
+### Example Fie
+
+```
+<script>
+
+import jsonData from "@/data.json";
+import { RootTree } from "vue3-jstree-component";
+import "../node_modules/vue3-jstree-component/dist/style.css";
+
+export default {
+  components: { RootTree },
+  data: function () {
+    return {
+      userData: jsonData,
+    };
+  },
+};
+</script>
+
+<template>
+  <RootTree :userData="jsonData"></RootTree>
+</template>
+
+```
 
 ## Data Input Format - json file
 
